@@ -19,7 +19,29 @@ Band.create!([
 			birthday: "16/05/1972",
 			country: "Brazil"
 		)
+	],
+	albums: [
+		Album.new(
+			name: "Killing Is My Business... and Business Is Good!",
+			release_year: "1985"
+		),
+		Album.new(
+			name: "Peace Sells... but Who's Buying?",
+			release_year: "1986"
+		),
+		Album.new(
+			name: "So Far, So Good... So What!",
+			release_year: "1988"
+		),
+		Album.new(
+			name: "Rust in Peace",
+			release_year: "1990"
+		),
+		Album.new(
+			name: "Countdown to Extinction",
+			release_year: "1992"
+		)
 	]
 ])
 
-p "Foi criado #{Band.count} bandas e #{Artist.count} artistas"
+p "Foi criado #{Band.count} bandas, #{Artist.count} artistas e #{Album.count} albums!"

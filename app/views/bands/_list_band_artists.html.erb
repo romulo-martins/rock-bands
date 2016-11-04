@@ -1,0 +1,20 @@
+<h3>Artists</h3>
+
+<% if !@band.artists.nil? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @band.artists.each do |artist| %>
+        <tr>
+          <td><%= link_to artist.name, artist %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+

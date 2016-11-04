@@ -16,9 +16,12 @@ ActiveRecord::Schema.define(version: 20160923160100) do
   create_table "albums", force: :cascade do |t|
     t.string   "name",         limit: 255
     t.datetime "release_year"
+    t.integer  "band_id",      limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  add_index "albums", ["band_id"], name: "index_albums_on_band_id", using: :btree
 
   create_table "artists", force: :cascade do |t|
     t.string   "name",       limit: 255
