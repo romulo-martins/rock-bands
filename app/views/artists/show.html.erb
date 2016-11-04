@@ -1,9 +1,10 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+	<p class="alert alert-success"><%= notice %></p>
+<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
+<h1><%= @artist.name %></h1>
+
+<p><%= image_tag @artist.image, width: 400, height: 400 %></p>
 
 <p>
   <strong>Biography:</strong>

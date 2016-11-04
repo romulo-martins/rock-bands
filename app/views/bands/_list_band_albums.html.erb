@@ -1,5 +1,7 @@
 <h3>Albums</h3>
 
+<%= link_to 'Add Album', new_album_path %>
+
 <% if !@band.albums.nil? %>
   <table class="table">
     <thead>

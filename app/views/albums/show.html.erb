@@ -1,7 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+	<p class="alert alert-success"><%= notice %></p>
+<% end %>
 
 <p>
-	<%= image_tag @album.image %>
+	<%= image_tag @album.image, width: 350, height: 350 %>
 </p>
 
 <p>
@@ -15,4 +17,4 @@
 </p>
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
+<%= link_to 'Back', @album.band %>
