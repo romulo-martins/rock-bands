@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20160923160100) do
     t.string   "name",         limit: 255
     t.datetime "release_year"
     t.integer  "band_id",      limit: 4
+    t.string   "image",        limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160923160100) do
     t.text     "biography",  limit: 65535
     t.datetime "birthday"
     t.string   "country",    limit: 255
+    t.string   "image",      limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160923160100) do
     t.text     "biography",  limit: 65535
     t.datetime "birthday"
     t.string   "country",    limit: 255
+    t.string   "image",      limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

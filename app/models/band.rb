@@ -4,4 +4,6 @@ class Band < ActiveRecord::Base
 	has_many :albums
 
 	validates :name, :biography, :birthday, :country, presence: true
+
+	mount_uploader :image, ImageUploader
 end

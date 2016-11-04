@@ -5,6 +5,7 @@ class CreateBands < ActiveRecord::Migration
       t.text :biography
       t.datetime :birthday
       t.string :country
+      t.string :image
 
       t.timestamps null: false
     end
