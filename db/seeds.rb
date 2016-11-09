@@ -1,6 +1,21 @@
 Artist.destroy_all
 Band.destroy_all
 Album.destroy_all
+Genre.destroy_all
+
+Genre.create!([name: 'Classic Rock'])
+Genre.create!([name: 'Hard Rock'])
+Genre.create!([name: 'Progressive Rock'])
+Genre.create!([name: 'Blues'])
+Genre.create!([name: 'Fusion'])
+Genre.create!([name: 'Heavy Metal'])
+Genre.create!([name: 'Thrash Metal'])
+Genre.create!([name: 'Death Metal'])
+Genre.create!([name: 'Black Metal'])
+Genre.create!([name: 'Power Metal'])
+Genre.create!([name: 'Progressive Metal'])
+Genre.create!([name: 'Doom Metal'])
+Genre.create!([name: 'Symphonic'])
 
 Band.create!([
 	name: "Megadeth",
@@ -132,4 +147,4 @@ Band.create!([
 	]
 ])
 
-p "Foi criado #{Band.count} bandas, #{Artist.count} artistas e #{Album.count} albums!"
+p "Foi criado #{Band.count} bandas, #{Artist.count} artistas,#{Album.count} albums e #{Genre.count} generos!"

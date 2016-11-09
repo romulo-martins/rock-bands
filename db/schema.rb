@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160923160100) do
+ActiveRecord::Schema.define(version: 20161109165513) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name",         limit: 255
@@ -49,10 +49,18 @@ ActiveRecord::Schema.define(version: 20160923160100) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "bands_genres", force: :cascade do |t|
+    t.integer "genre_id", limit: 4
+    t.integer "band_id",  limit: 4
+  end
+
   create_table "genres", force: :cascade do |t|
     t.string   "name",       limit: 255
+    t.integer  "band_id",    limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  add_index "genres", ["band_id"], name: "index_genres_on_band_id", using: :btree
 
 end

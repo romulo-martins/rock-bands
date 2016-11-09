@@ -1,0 +1,9 @@
+<h3>Generos</h3>
+
+<% if !@band.genres.nil? %>
+  <ul>
+    <% @band.genres.each do |genre| %>
+      <li><%= genre %></li>
+    <% end %>
+  </ul>
+<% end %>
