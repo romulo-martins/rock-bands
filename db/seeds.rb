@@ -3,25 +3,26 @@ Band.destroy_all
 Album.destroy_all
 Genre.destroy_all
 
-Genre.create!([name: 'Classic Rock'])
-Genre.create!([name: 'Hard Rock'])
-Genre.create!([name: 'Progressive Rock'])
-Genre.create!([name: 'Blues'])
-Genre.create!([name: 'Fusion'])
-Genre.create!([name: 'Heavy Metal'])
-Genre.create!([name: 'Thrash Metal'])
-Genre.create!([name: 'Death Metal'])
-Genre.create!([name: 'Black Metal'])
-Genre.create!([name: 'Power Metal'])
-Genre.create!([name: 'Progressive Metal'])
-Genre.create!([name: 'Doom Metal'])
-Genre.create!([name: 'Symphonic'])
+Genre.create!([id: 1, name: 'Classic Rock'])
+Genre.create!([id: 2, name: 'Hard Rock'])
+Genre.create!([id: 3, name: 'Progressive Rock'])
+Genre.create!([id: 4, name: 'Blues'])
+Genre.create!([id: 5, name: 'Fusion'])
+Genre.create!([id: 6, name: 'Heavy Metal'])
+Genre.create!([id: 7, name: 'Thrash Metal'])
+Genre.create!([id: 8, name: 'Death Metal'])
+Genre.create!([id: 9, name: 'Black Metal'])
+Genre.create!([id: 10, name: 'Power Metal'])
+Genre.create!([id: 11, name: 'Progressive Metal'])
+Genre.create!([id: 12, name: 'Doom Metal'])
+Genre.create!([id: 13, name: 'Symphonic'])
 
 Band.create!([
 	name: "Megadeth",
 	biography: "Megadeth é uma banda norte-americana de heavy metal liderada por seu fundador, o vocalista e guitarrista Dave Mustaine. O grupo foi formado em 1983, após Dave ser demitido do Metallica. Desde então, a banda lançou quinze álbuns de estúdio, quatro álbuns ao vivo, dois EP e cinco compilações.",
 	birthday: "01/01/1983",
 	country: "Estados Unidos",
+	genres: [Genre.find(7)],
 	image: open("public/img/band/megadeth.jpg"),
 	artists: [
 		Artist.new(

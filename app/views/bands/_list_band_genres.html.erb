@@ -3,7 +3,7 @@
 <% if !@band.genres.nil? %>
   <ul>
     <% @band.genres.each do |genre| %>
-      <li><%= genre %></li>
+      <li><%= genre.name %></li>
     <% end %>
   </ul>
 <% end %>

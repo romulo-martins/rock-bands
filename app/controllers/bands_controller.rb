@@ -1,5 +1,6 @@
 class BandsController < ApplicationController
   before_action :set_band, only: [:show, :edit, :update, :destroy]
+  before_action :set_genres, only: [:new, :edit]
 
   def index
     @bands = Band.all
@@ -50,7 +51,11 @@ class BandsController < ApplicationController
       @band = Band.find(params[:id])
     end
 
+    def set_genres
+      @genres = Genre.all
+    end
+
     def band_params
-      params.require(:band).permit(:name, :biography, :birthday, :country, :image)
+      params.require(:band).permit(:name, :biography, :birthday, :country, :image, :genre_ids)
     end
 end
