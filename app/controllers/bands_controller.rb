@@ -18,7 +18,6 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
-
     respond_to do |format|
       if @band.save
         format.html { redirect_to @band, notice: 'Band was successfully created.' }
@@ -56,6 +55,6 @@ class BandsController < ApplicationController
     end
 
     def band_params
-      params.require(:band).permit(:name, :biography, :birthday, :country, :image, :genre_ids)
+      params.require(:band).permit(:name, :biography, :birthday, :country, :image, { genre_ids: [] })
     end
 end
