@@ -14,50 +14,53 @@
 ActiveRecord::Schema.define(version: 20161109165513) do
 
   create_table "albums", force: :cascade do |t|
-    t.string   "name",         limit: 255
+    t.string   "name"
     t.datetime "release_year"
-    t.integer  "band_id",      limit: 4
-    t.string   "image",        limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "band_id"
+    t.string   "image"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  add_index "albums", ["band_id"], name: "index_albums_on_band_id", using: :btree
+  add_index "albums", ["band_id"], name: "index_albums_on_band_id"
 
   create_table "artists", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.text     "biography",  limit: 65535
+    t.string   "name"
+    t.text     "biography"
     t.datetime "birthday"
-    t.string   "country",    limit: 255
-    t.string   "image",      limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "country"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "artists_bands", force: :cascade do |t|
-    t.integer "artist_id", limit: 4
-    t.integer "band_id",   limit: 4
+    t.integer "artist_id"
+    t.integer "band_id"
   end
 
   create_table "bands", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.text     "biography",  limit: 65535
+    t.string   "name"
+    t.text     "biography"
     t.datetime "birthday"
-    t.string   "country",    limit: 255
-    t.string   "image",      limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "country"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "bands_genres", force: :cascade do |t|
-    t.integer "genre_id", limit: 4
-    t.integer "band_id",  limit: 4
+    t.integer "genre_id"
+    t.integer "band_id"
   end
 
   create_table "genres", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name"
+    t.integer  "band_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  add_index "genres", ["band_id"], name: "index_genres_on_band_id"
 
 end
